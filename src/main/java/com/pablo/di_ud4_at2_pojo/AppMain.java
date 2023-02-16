@@ -30,8 +30,6 @@ public class AppMain extends Application {
     //Clase que almacenará los datos del fichero settings.properties
     private static Properties config = new Properties();
 
-
-
     @Override
     public void start(Stage stage) throws IOException {
 

@@ -8,13 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import org.bson.Document;
-import org.bson.codecs.configuration.CodecProvider;
-import org.bson.codecs.configuration.CodecRegistry;
-import org.bson.codecs.pojo.PojoCodecProvider;
 
-import static com.mongodb.MongoClientSettings.getDefaultCodecRegistry;
-import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
-import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public final class DbConnection {
 
@@ -31,16 +25,15 @@ public final class DbConnection {
 
 
     //Conexión con MongoDB
-    private static MongoClient mongoClient;
+    private  MongoClient mongoClient;
 
     //Conexión con la base de datos a utilizar
-    private static MongoDatabase diUd4DB;
+    private  MongoDatabase diUd4DB;
 
     //Referencia a la Collection que almacena las tareas
-    private static MongoCollection<Document> tasksCollection;
+    public  MongoCollection<Document> tasksCollection;
 
     public ObservableList<Document> tasks = FXCollections.observableArrayList();
-
 
 
     //Método para inicializar la conexión
@@ -50,17 +43,13 @@ public final class DbConnection {
         boolean result = false;
         System.out.println("Conectando con MongoDB...");
         try {
-            CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
-            CodecRegistry pojoCodecRegistry = fromRegistries(getDefaultCodecRegistry(), fromProviders(pojoCodecProvider));
-
-
             mongoClient = MongoClients.create(connectionString);
-            diUd4DB = mongoClient.getDatabase(dbName).withCodecRegistry(pojoCodecRegistry);
+            diUd4DB = mongoClient.getDatabase(dbName);
             tasksCollection = diUd4DB.getCollection("tasks");
 
 
             //Inicializamos la lista
-            this.tasks = tasksCollection.find().limit(10).into(tasks);
+            this.tasks = tasksCollection.find().into(tasks);
 
             result = true;
 
@@ -75,5 +64,4 @@ public final class DbConnection {
         return result;
 
     }
-
 }
