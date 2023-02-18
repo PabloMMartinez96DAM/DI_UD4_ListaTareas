@@ -6,52 +6,57 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pablo.di_ud4_at2_pojo.controllers.ReadTaskViewController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="stackPaneLayout" stylesheets="@../style/readTaskViewStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pablo.di_ud4_at2_pojo.controllers.ReadTaskViewController">
    <children>
-      <VBox alignment="TOP_CENTER" spacing="10.0">
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label text="Lista Tareas">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
+            <VBox alignment="TOP_CENTER" spacing="10.0">
+               <children>
+                  <Label text="Lista Tareas">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <TableView fx:id="tasksTableView">
+                     <columns>
+                        <TableColumn fx:id="dateCol" prefWidth="75.0" text="Fecha" />
+                        <TableColumn fx:id="descriptCol" prefWidth="75.0" text="Descripción" />
+                        <TableColumn fx:id="stateCol" prefWidth="75.0" text="Estado" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="modifyBtn" mnemonicParsing="false" onAction="#onModifyBtnAction" prefWidth="75.0" text="Modificar" />
+                  <Button fx:id="deletBtn" mnemonicParsing="false" onAction="#onDeleteBtnAction" prefWidth="75.0" text="Borrar" />
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="75.0" text="Salir" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
       </VBox>
-      <VBox alignment="CENTER">
-         <children>
-            <TableView fx:id="tasksTableView">
-              <columns>
-                <TableColumn fx:id="dateCol" prefWidth="75.0" text="Fecha" />
-                <TableColumn fx:id="descriptCol" prefWidth="75.0" text="Descripción" />
-                  <TableColumn fx:id="stateCol" prefWidth="75.0" text="Estado" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-         </children>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </VBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-         <children>
-            <Button fx:id="modifyBtn" mnemonicParsing="false" onAction="#onModifyBtnAction" prefWidth="75.0" text="Modificar" />
-            <Button fx:id="deletBtn" mnemonicParsing="false" onAction="#onDeleteBtnAction" prefWidth="75.0" text="Borrar" />
-            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#onExitBtnAction" prefWidth="75.0" text="Salir" />
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </HBox>
    </children>
-</VBox>
+</StackPane>

@@ -1,0 +1,61 @@
+.label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+
+    -fx-background-color: #FA7921;
+    -fx-font-size: 18;
+
+    -fx-max-width: 200;
+    -fx-alignment: center;
+}
+
+.mainLayout{
+    -fx-background-color: FDE74C;
+
+}
+
+.toggle-button{
+    -fx-background-color: #E55934;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+
+    -fx-graphic-text-gap: 10;
+}
+
+.toggle-button:selected{
+    -fx-background-color: #FA7921;
+}
+.title{
+    -fx-text-fill: #FA7921;
+    -fx-font-size: 36;
+    -fx-max-width: 300;
+    -fx-background-color: none;
+
+}
+.sideBar{
+    -fx-background-color:  #FA7921;
+}
+
+.button{
+
+    -fx-background-color: #E55934;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-pref-width: 100;
+    -fx-padding: 10;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+
+}
+.button:hover{
+
+    -fx-background-color:#FA7921 ;
+    -fx-text-fill: #FDE74C;
+
+
+}

@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="189bd6d3-5be6-4e2b-97dd-fe9ac74a8339" name="Changes" comment="Singleton de conexión con mongo db implementado">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/ModifyTaskViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Explanation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Singleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletons/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/modifyTaskView.fxml" afterDir="false" />
+    <list default="true" id="189bd6d3-5be6-4e2b-97dd-fe9ac74a8339" name="Changes" comment="Implementada la vista modificar y pendiente de implementarlo con los pojos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/models/TaskModelList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/style/createTaskViewStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/style/readTaskViewStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/AppMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/CreateTaskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/CreateTaskViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/ModifyTaskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/UpdateTaskViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/ReadTaskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/ReadTaskViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Explanation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Explanation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/ModeloUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletonExplanation/Datos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletons/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/singletons/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/style/mainViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/style/mainViewStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/createTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/createTaskView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/modifyTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/modifyTaskView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/readTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pablo/di_ud4_at2_pojo/views/readTaskView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,25 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Guame/DAM/2DAM/001_Modulos_2DAM/DI/EV2/UD4/Activities/Entregas/DI_UD4_AT2",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Guame/DAM/2DAM/001_Modulos_2DAM/DI/EV2/PrepExamen&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Guame\DAM\2DAM\001_Modulos_2DAM\DI\EV2\UD4\Activities\Entregas\DI_UD4_AT2_POJO\src\main\resources" />
@@ -113,7 +116,9 @@
       <updated>1676542094797</updated>
       <workItem from="1676542095964" duration="16199000" />
       <workItem from="1676568242857" duration="2000" />
-      <workItem from="1676568366894" duration="10129000" />
+      <workItem from="1676568366894" duration="10286000" />
+      <workItem from="1676623801091" duration="8268000" />
+      <workItem from="1676713003653" duration="4705000" />
     </task>
     <task id="LOCAL-00001" summary="Singleton de conexión con mongo db implementado">
       <created>1676568479760</created>
@@ -122,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676568479760</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementada la vista modificar y pendiente de implementarlo con los pojos">
+      <created>1676579147754</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676579147754</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +153,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Singleton de conexión con mongo db implementado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Singleton de conexión con mongo db implementado" />
+    <MESSAGE value="Implementada la vista modificar y pendiente de implementarlo con los pojos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementada la vista modificar y pendiente de implementarlo con los pojos" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pablo/di_ud4_at2_pojo/controllers/MainViewController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

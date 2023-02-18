@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import org.bson.Document;
 
+import static com.mongodb.client.model.Sorts.ascending;
+
 
 public final class DbConnection {
 
@@ -49,7 +51,7 @@ public final class DbConnection {
 
 
             //Inicializamos la lista
-            this.tasks = tasksCollection.find().into(tasks);
+            this.tasks = tasksCollection.find().sort(ascending("date")).limit(10).into(tasks);
 
             result = true;
 

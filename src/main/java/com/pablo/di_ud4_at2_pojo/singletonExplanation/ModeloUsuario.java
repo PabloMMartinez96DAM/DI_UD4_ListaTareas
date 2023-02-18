@@ -1,17 +1,21 @@
 package com.pablo.di_ud4_at2_pojo.singletonExplanation;
 
-public class Model {
+public class ModeloUsuario {
 
     //Properties
     private int id;
     private String nombre;
 
+    private static int contadorUsuarios = 0;
+
+
+
 
     //Constructor
-    public Model(int id, String nombre) {
+    public ModeloUsuario(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-
+        contadorUsuarios++;
 
     }
 
@@ -30,5 +34,9 @@ public class Model {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public static int getContadorUsuarios() {
+        return contadorUsuarios;
     }
 }

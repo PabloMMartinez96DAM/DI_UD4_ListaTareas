@@ -1,10 +1,12 @@
 package com.pablo.di_ud4_at2_pojo.controllers;
 
+import com.pablo.di_ud4_at2_pojo.AppMain;
+import com.pablo.di_ud4_at2_pojo.models.TaskModelList;
 import com.pablo.di_ud4_at2_pojo.models.enums.TaskState;
 import com.pablo.di_ud4_at2_pojo.singletons.Context;
 import com.pablo.di_ud4_at2_pojo.singletons.DbConnection;
 import de.jensd.fx.glyphs.icons525.Icons525View;
-import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,7 +14,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.bson.types.ObjectId;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -21,8 +22,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Sorts.ascending;
 
-public class ModifyTaskViewController implements Initializable {
+public class UpdateTaskViewController implements Initializable {
 
     @FXML
     private DatePicker datePicker;
@@ -58,10 +60,9 @@ public class ModifyTaskViewController implements Initializable {
         Document document = ctx.getDocument();
 
 
+
         this.datePicker.setValue(LocalDate.parse(document.getString("date")));
         this.descriptionTextField.setText(document.getString("description"));
-
-
         this.state = TaskState.valueOf(document.getString("state"));
 
         //Implementación de los ToggleBtn
@@ -81,7 +82,6 @@ public class ModifyTaskViewController implements Initializable {
             case NON_STARTED -> this.tglGroup.selectToggle(this.nonStartedTglBtn);
             case FINISHED -> this.tglGroup.selectToggle(this.finishedTglBtn);
         }
-
 
         //Marcamos un ToggleButton por defecto
         this.tglGroup.selectToggle(this.nonStartedTglBtn);
@@ -119,12 +119,13 @@ public class ModifyTaskViewController implements Initializable {
         dbConn.tasksCollection.replaceOne(query, newDocument);
 
         //Actualizamos el Observable list con tremenda chapuza
-        dbConn.tasksCollection.find().into(dbConn.tasks);
+        TaskModelList.tasks = dbConn.tasksCollection.find().sort(ascending("date")).limit(10).into(FXCollections.observableArrayList());
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Elemento modificado");
         alert.setHeaderText("!Enhorabuena¡ El elemento se ha modificado¡");
-        alert.setContentText("El elemento: " + newDocument.getString("description"));
+        alert.setContentText("El elemento: " + newDocument.getString("description") + " se ha modificado \nCierra la ventana de modificar para ver los cambios");
+        alert.showAndWait();
     }
 
     @FXML

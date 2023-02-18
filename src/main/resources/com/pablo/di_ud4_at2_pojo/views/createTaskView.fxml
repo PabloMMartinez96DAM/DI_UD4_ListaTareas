@@ -10,14 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pablo.di_ud4_at2_pojo.controllers.CreateTaskViewController">
+<VBox minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" styleClass="mainLayout" stylesheets="@../style/createTaskViewStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pablo.di_ud4_at2_pojo.controllers.CreateTaskViewController">
    <children>
-      <VBox>
+      <VBox alignment="CENTER">
          <children>
-            <Label text="Crear tareas">
+            <Label styleClass="title" text="Crear tareas">
                <font>
-                  <Font size="48.0" />
+                  <Font size="24.0" />
                </font>
                <padding>
                   <Insets left="10.0" />
