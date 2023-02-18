@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 
@@ -31,8 +32,17 @@ public class MainViewController {
     }
 
     @FXML
-    void onreadViewBtnAction(ActionEvent event) {
-        navigateTo("readTaskView.fxml");
+    void onReadViewBtnAction(ActionEvent event) {
+        //navigateTo("readTaskView.fxml");
+        FXMLLoader createViewLoader = new FXMLLoader(AppMain.class.getResource("views/" + "readTaskView.fxml"));
+        try {
+            StackPane centerLayout = createViewLoader.load();
+            this.rootLayout.setCenter(centerLayout);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @FXML

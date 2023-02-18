@@ -1,15 +1,15 @@
 package com.pablo.di_ud4_at2_pojo.singletonExplanation;
 
-public final class Singleton {
+public final class Datos {
 
     //Properties
-    private static Singleton instance;
+    private static Datos instance;
 
     private int modelId;
 
-    public static Singleton getInstance() {
+    public static Datos getInstance() {
         if(instance == null){
-            instance = new Singleton();
+            instance = new Datos();
         }
         return instance;
     }

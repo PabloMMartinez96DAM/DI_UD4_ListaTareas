@@ -1,0 +1,36 @@
+.title {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 40% , #FDE74C, #E55934);
+
+
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+.label{
+    -fx-text-fill: #E55934;
+    -fx-font-weight: bold;
+
+
+}
+.sideBar{
+    -fx-background-color:  #FA7921;
+}
+
+.button{
+
+    -fx-background-color: #E55934;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 10;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+
+}
+.button:hover{
+
+    -fx-background-color:#FDE74C ;
+    -fx-text-fill: #E55934;
+
+
+}
